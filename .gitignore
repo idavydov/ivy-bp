@@ -1,0 +1,13 @@
+captures/
+analysis/
+*.apk
+*.pdf
+*.jks
+*.keystore
+local.properties
+.gradle/
+.kotlin/
+**/build/
+.venv/
+__pycache__/
+.signing/

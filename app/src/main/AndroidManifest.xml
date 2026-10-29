@@ -1,0 +1,22 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+ <uses-feature android:name="android.software.companion_device_setup" android:required="false"/>
+ <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation"/>
+ <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ <uses-permission android:name="android.permission.REQUEST_OBSERVE_COMPANION_DEVICE_PRESENCE"/>
+ <uses-permission android:name="android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE"/>
+ <application android:name=".IvyApp" android:label="IVY BP" android:theme="@style/Theme.IvyBP"
+ android:allowBackup="true" android:dataExtractionRules="@xml/backup_rules" android:icon="@drawable/ic_monitor" android:supportsRtl="true">
+ <activity android:name=".MainActivity" android:exported="true">
+ <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+ </activity>
+ <service android:name=".PresenceService" android:exported="true" android:permission="android.permission.BIND_COMPANION_DEVICE_SERVICE">
+ <intent-filter><action android:name="android.companion.CompanionDeviceService"/></intent-filter>
+ <property android:name="android.companion.PROPERTY_PRIMARY_COMPANION_DEVICE_SERVICE" android:value="true"/>
+ </service>
+ <service android:name=".ListeningService" android:exported="false" android:foregroundServiceType="connectedDevice"/>
+ </application>
+</manifest>
