@@ -2,6 +2,8 @@
 
 Android app for syncing IVY Health IVBPW / LS810-B blood-pressure monitors over Bluetooth LE.
 
+<p align="center"><img src="docs/images/history.png" alt="IVY BP history with sample readings and pressure chart" width="360"></p>
+
 ## Features
 
 - Blood pressure and heart-rate recording
